@@ -4,7 +4,7 @@
   "description": "",
   "main": "main.js",
   "scripts": {
-    "dev": "cross-env NODE_ENV=development concurrently \"vite\" \"electron .\"",
+    "dev": "concurrently \"vite\" \"wait-on http://localhost:5173 && electron .\"",
     "build": "vite build",
     "dist": "vite build && electron-builder",
     "start": "electron ."
@@ -18,7 +18,8 @@
     "concurrently": "^9.2.1",
     "cross-env": "^10.1.0",
     "electron": "^39.2.6",
-    "electron-builder": "^26.7.0"
+    "electron-builder": "^26.7.0",
+    "wait-on": "^9.1.0"
   },
   "dependencies": {
     "three": "^0.182.0",
