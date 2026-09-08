@@ -1,0 +1,43 @@
+{
+  "name": "mki",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development concurrently \"vite\" \"electron .\"",
+    "build": "vite build",
+    "dist": "vite build && electron-builder",
+    "start": "electron ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^6.0.2",
+    "concurrently": "^9.2.1",
+    "cross-env": "^10.1.0",
+    "electron": "^39.2.6",
+    "electron-builder": "^26.7.0"
+  },
+  "dependencies": {
+    "three": "^0.182.0",
+    "vue": "^3.5.25"
+  },
+  "build": {
+    "appId": "com.example.electronapp",
+    "productName": "MKI",
+    "files": [
+      "dist/**",
+      "main.js",
+      "package.json"
+    ],
+    "win": {
+      "target": "nsis"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    }
+  }
+}
