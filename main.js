@@ -3,7 +3,7 @@ const path = require('path')
 
 const isDev = !app.isPackaged
 
-app.disableHardwareAcceleration()
+//app.disableHardwareAcceleration()
 
 function createWindow() {
   const win = new BrowserWindow({
